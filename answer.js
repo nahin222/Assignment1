@@ -64,3 +64,25 @@ function getCngFare(distance, isNight, waitingMinutes){
 
 
 //Question 5
+const getChaseVerdict = (target, scored, ballsLeft) => {
+    let runsNeeded = target-scored;
+    let verdict = "";
+    if(runsNeeded<=0)
+        return "Won";
+    else if(ballsLeft<=0)
+        return "Lost";
+    else
+    {
+        let requiredRate = (runsNeeded / ballsLeft) * 6;
+        if(requiredRate<=6)
+            verdict = "Comfortable";
+        else if(requiredRate<=12)
+            verdict = "Tough";
+        else
+            verdict = "Almost Impossible";        
+    
+        return `Need ${runsNeeded} runs in ${ballsLeft} balls | ${verdict}`;
+
+    }
+
+};
