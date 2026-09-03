@@ -26,3 +26,17 @@ function getDayType(day){
 
 
 //Question 3
+function validateUsername(usrName){
+    if(usrName.length<4)
+        return "Too Short";
+    else if(usrName.includes(" "))
+        return "No Space Allowed";
+    else if((usrName.toLowerCase().includes("admin")))
+        return "Reserved Word";
+    else
+        return "Available";
+};
+//I would add another check to make sure the input is a string cause inputting a number will break this but that is not part of the requirements
+
+
+//Question 4
