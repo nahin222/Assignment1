@@ -40,3 +40,27 @@ function validateUsername(usrName){
 
 
 //Question 4
+function getCngFare(distance, isNight, waitingMinutes){
+    let night = false;
+    let wait = 0;
+    night = isNight;
+    wait = waitingMinutes;
+    let fare = 0;
+    if(distance<=2)
+        fare = 50;
+    else
+        fare = 50+15*(distance-2);
+
+    if(wait>0)
+        fare = fare + wait*2;
+
+    if(night)
+        return fare*1.2;     
+    else
+        return fare;
+};
+//Typechecking at first would have been better but out of scope
+
+
+
+//Question 5
